@@ -36,7 +36,7 @@ namespace HTTP5112Assignment2.Controllers
         }
 
         /// <summary>
-        /// Calculates the number ways two dice, one with {m} sides and the other with {n} sides, can roll the value of 10.
+        /// Calculates the number ways two dice, one with {m} (1 <= m <= 1000) sides and the other with {n} (1 <= n <= 1000) sides, can roll the value of 10.
         /// </summary>
         /// <param name="m"></param>
         /// <param name="n"></param>
@@ -48,8 +48,8 @@ namespace HTTP5112Assignment2.Controllers
         /// GET ../api/J2/DiceGame/12/4 -> There are 4 ways to get the sum 10.
         /// GET ../api/J2/DiceGame/3/3 -> There are 0 ways to get the sum 10.
         /// GET ../api/J2/Dicegame/5/5 -> There is 1 way to get the sum 10.
-        /// 
-        /// GET ../api/J2/Dicegame/-1/11 -> Not physically possible. A die can't have fewer than 2 sides.
+        /// Error message example below for inputs outside of permitted range:
+        /// GET ../api/J2/Dicegame/-1/11 -> Please enter a number between 1 and 1000 (inclusively) for the inputs.
         /// </example>
 
         //GET:/api/J2/DiceGame/{m}/{n}
@@ -61,7 +61,7 @@ namespace HTTP5112Assignment2.Controllers
             string SingularOutput = "There is 1 way to get the sum 10.";
             string PluralOpening = "There are ";
             string PluralClosing = " ways to get the sum 10.";
-            string ParameterLessThanTwo = "Not physically possible. A die can't have fewer than 2 sides.";
+            string ErrorMessage = "Please enter a number between 1 and 1000 (inclusively) for the inputs.";
 
             //variable: number of ways to get the sum 10 - starting at 0 by default
             int Solution = 0;
@@ -102,10 +102,10 @@ namespace HTTP5112Assignment2.Controllers
             }
 
             //final output
-            if (m < 2 || n < 2)
+            if (m < 1 || m > 1000 || n < 1 || n > 1000)
             {
-                //Error message if one or both of the parameters are less than 2
-                return ParameterLessThanTwo;
+                //Error message if NOT 1 <= m <= 1000 or 1 <= n <= 1000
+                return ErrorMessage;
             }
             if (Solution == 1)
             {
