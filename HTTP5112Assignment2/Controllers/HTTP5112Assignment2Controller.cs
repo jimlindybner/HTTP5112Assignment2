@@ -194,7 +194,6 @@ namespace HTTP5112Assignment2.Controllers
                         //Rovarspraket = ConsFin + Letters[i + 1].ToString();
                         //test
                         Console.Write(ConsFin);
-                        return ConsFin;
                     }
                 }
             }
