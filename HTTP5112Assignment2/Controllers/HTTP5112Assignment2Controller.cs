@@ -148,7 +148,7 @@ namespace HTTP5112Assignment2.Controllers
                 "s","t","u","v","w","x","y","z"
             };
             string[] Vowels = { "a", "e", "i", "o", "u" };
-            char[] Consonants = {'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'};
+            string[] Consonants = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"};
             string Letter;
             string Consonant;
             string AddVowel; //add closest vowel
