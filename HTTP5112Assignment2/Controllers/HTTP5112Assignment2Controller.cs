@@ -192,8 +192,6 @@ namespace HTTP5112Assignment2.Controllers
                         ConsFin = AddVowel + Consonants[j + 1];
                         //add original vowel back
                         //Rovarspraket = ConsFin + Letters[i + 1].ToString();
-                        //test
-                        Console.Write(ConsFin);
                     }
                 }
             }
