@@ -153,6 +153,7 @@ namespace HTTP5112Assignment2.Controllers
             string Consonant;
             string AddVowel; //add closest vowel
             string ConsFin; //add next consonant
+            //string Rovarspraket; //final word
 
             //gather letters in {Word} in an array
             char[] Letters = Word.ToCharArray();
@@ -189,11 +190,14 @@ namespace HTTP5112Assignment2.Controllers
                         }
                         //add next consonant
                         ConsFin = AddVowel + Consonants[j + 1];
+                        //add original vowel back
+                        //Rovarspraket = ConsFin + Letters[i + 1].ToString();
+                        //test
                         Console.Write(ConsFin);
+                        return ConsFin;
                     }
                 }
             }
-
         }
     }
 }
